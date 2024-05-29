@@ -7,13 +7,10 @@ public class ReadOperation {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String url = "jdbc:mysql://localhost:3306/ineuron";
-        String user = "root";
-        String password = "root";
 
         try{
             System.out.println("Connecting to database...");
-            connection = DriverManager.getConnection(url, user, password);
+            connection = JdbcConnection.getJdbcConnection();
 
             if(connection != null){
                 System.out.println("Successfully connected to database!");

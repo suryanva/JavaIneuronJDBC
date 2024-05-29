@@ -24,13 +24,8 @@ public class UpdateOperation {
 
 
 
-
-        String url = "jdbc:mysql://localhost:3306/ineuron";
-        String user = "root";
-        String password = "root";
-
         try{
-            connection = DriverManager.getConnection(url, user, password);
+            connection = JdbcConnection.getJdbcConnection();
             System.out.println("Connected to database");
 
             if(connection != null){

@@ -8,10 +8,6 @@ import java.util.Scanner;
 
 public class CreateOperation {
     public static void createTable(Scanner scanner) throws SQLException, ParseException {
-
-        String url = "jdbc:mysql://localhost:3306/ineuron";
-        String user = "root";
-        String password = "root";
         System.out.println("Enter the student name: ");
         String studentName = scanner.next();
         System.out.println("Enter the student Gender: ");
@@ -41,7 +37,7 @@ public class CreateOperation {
         PreparedStatement preparedStatement = null;
         try {
 
-            connection = DriverManager.getConnection(url, user, password);
+            connection = JdbcConnection.getJdbcConnection();
             if (connection != null) {
                 System.out.println("Connected to database");
 
